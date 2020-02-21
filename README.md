@@ -61,3 +61,9 @@ $ ./out/iap_auth server
 ## Install as a Sidecar
 
 TODO
+
+
+# Usage
+```
+LOGGER_LEVEL="error" IAP_HOST="https://vault-dev.upbound.io" SERVICE_ACCOUNT_CREDENTIALS="/home/artur/.config/gcloud/application_default_credentials.json" CLIENT_ID="xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com" PORT="8080" REFRESH_TIME_SECONDS="3600s" ./out/iap_auth server
+```
