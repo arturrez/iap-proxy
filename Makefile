@@ -12,7 +12,8 @@ setup:
 
 compile:
 	mkdir -p out/
-	go build -o $(APP_EXECUTABLE) -ldflags "-X main.Build=$(BUILD_DATE) -X main.Commit=$(COMMIT_HASH) -s -w"
+	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o $(APP_EXECUTABLE) .
+	#go build -o $(APP_EXECUTABLE) -ldflags "-X main.Build=$(BUILD_DATE) -X main.Commit=$(COMMIT_HASH) -s -w"
 
 build: compile fmt vet lint
 
